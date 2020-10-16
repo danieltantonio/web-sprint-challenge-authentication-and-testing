@@ -28,7 +28,7 @@ router.post('/login', (req, res) => {
       return res.status(400).json({ message: 'Invalid login credentials.' });
     }
 
-    const token = jwt.sign(user[0], config.jwtSecret, { expiresIn: '1h' });
+    const token = jwt.sign(user[0], config.jwtSecret, { expiresIn: '1hr' });
 
     res.status(202).json({ token });
   })
